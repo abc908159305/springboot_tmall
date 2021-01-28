@@ -87,7 +87,7 @@
             <tbody>
                 <tr v-for="bean in beans">
                     <td>{{bean.id}}}</td>
-                    <td>{{bean.name}}}</td>
+                    <td>{{bean.name}}</td>
                     <td><a :href="'admin_property_edit?id=' + bean.id"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td><a href="#nowhere" @click="deleteBean(bean.id)"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -95,7 +95,7 @@
         </table>
     </div>
     <div th:replace="include/admin/adminPage::html"></div>
-    <div th:replace="include/admin/adminPage::html">
+    <div class="panel panel-warning addDiv">
         <div class="panel-heading">新增属性</div>
         <div class="panel-body">
             <table class="addTable">
