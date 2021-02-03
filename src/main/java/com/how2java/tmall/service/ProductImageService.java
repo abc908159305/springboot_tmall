@@ -17,6 +17,9 @@ public class ProductImageService {
     ProductImageDAO productImageDAO;
     @Autowired
     ProductService productService;
+    public ProductImage get(int id){
+        return productImageDAO.getOne(id);
+    }
     public void add(ProductImage bean){
         productImageDAO.save(bean);
     }
