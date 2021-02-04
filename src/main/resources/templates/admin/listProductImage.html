@@ -49,7 +49,7 @@
                     var url = this.uri + "?type=single&pid=" + pid;
                     var formData = new FormData();
                     formData.append("image",this.singleFile);
-                    axios.post(uri,formData).then(function (response) {
+                    axios.post(url,formData).then(function (response) {
                         vue.listSingles();
                         $("#singlePic").val('');
                         vue.singleFile = null;
@@ -73,7 +73,7 @@
                         return;
                     }
                     var url = this.uri + "/" + id;
-                    axios.delte(url).then(function (response) {
+                    axios.delete(url).then(function (response) {
                         vue.listSingles();
                         vue.listDetail();
                     });
