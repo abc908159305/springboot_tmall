@@ -1,7 +1,6 @@
 package com.how2java.tmall.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 
