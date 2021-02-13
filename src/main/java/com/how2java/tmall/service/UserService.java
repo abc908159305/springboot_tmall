@@ -13,11 +13,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     @Autowired
-    UserDao userDao;
+    UserDao userDAO;
     public Page4Navigator<User> list(int start,int size,int navigatePages){
         Sort sort = new Sort(Sort.Direction.DESC,"id");
         Pageable pageable = new PageRequest(start,size,sort);
-        Page pageFromJPA = userDao.findAll(pageable);
+        Page pageFromJPA = userDAO.findAll(pageable);
         return new Page4Navigator<>(pageFromJPA,navigatePages);
+    }
+    public boolean isExist(String name){
+        User user = userDAO.findByName(name);
+        if(null == user){
+            return false;
+        }
+        return true;
+    }
+    public User getByName(String name) {
+        return userDAO.findByName(name);
+    }
+    public void add(User user){
+        userDAO.save(user);
+    }
+    public User getByNameAndPassword(String name,String password){
+        return userDAO.findByNameAndPassword(name,password);
     }
 }
