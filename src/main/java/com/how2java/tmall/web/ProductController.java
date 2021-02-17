@@ -23,7 +23,7 @@ public class ProductController {
                                         @RequestParam(value = "size", defaultValue = "5") int size) {
         start = start < 0 ? 0 : start;
         Page4Navigator<Product> page = productService.list(cid, start, size, 5);
-        productImageService.setFirstProductImages(page.getContent());
+        productImageService.setFirstProdutImages(page.getContent());
         return page;
     }
     @GetMapping("/products/{id}")
